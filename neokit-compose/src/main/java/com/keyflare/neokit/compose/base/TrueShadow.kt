@@ -22,14 +22,12 @@ fun Modifier.trueShadow(
     spread: Dp = 0.dp,
     color: Color = Color(0f, 0f, 0f, 0.25f),
     type: TrueShadow.Type = TrueShadow.Type.OUTER,
-) =
-    this.then(TrueShadow(offset, radius, spread, color, type).modifier(shape))
+): Modifier = this.then(TrueShadow(offset, radius, spread, color, type).modifier(shape))
 
 fun Modifier.trueShadow(
     shape: Shape = RectangleShape,
     shadow: TrueShadow,
-) =
-    this.then(shadow.modifier(shape))
+) = this.then(shadow.modifier(shape))
 
 data class TrueShadow(
     val offset: DpOffset,
